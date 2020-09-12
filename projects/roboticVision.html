@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
 <head>
 
   <meta charset="utf-8">
@@ -10,15 +11,15 @@
   <title>Dayeon's Blog</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="../css/clean-blog.min.css" rel="stylesheet">
 
 </head>
 
@@ -27,36 +28,37 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Dayeon Kim</a>
+        <a class="navbar-brand" href="../index.html">Dayeon Kim</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="assets/Dayeon_Kim_CV.pdf">Curriculum Vitae</a>
+              <a class="nav-link" href="../assets/Dayeon_Kim_CV.pdf">Curriculum Vitae</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">ICRA 2019</a>
-                <a class="dropdown-item" href="#">IROS 2018</a>
-                <a class="dropdown-item" href="#">ICCAS 2017</a>
+                <a class="dropdown-item" href="ICRA2019.html">ICRA & RA-L 2019</a>
+                <a class="dropdown-item" href="IROS2018.html">IROS & RA-L 2018</a>
+                <a class="dropdown-item" href="ICCAS2017.html">ICCAS 2017</a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Robotic Vision</a>
-                <a class="dropdown-item" href="#">Guitar Tuner</a>
+                <a class="dropdown-item" href="roboticVision.html">Robotic Vision</a>
+                <a class="dropdown-item" href="tunetunee.html">Guitar Tuner</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tutorials.html">Tutorials</a>
+              <a class="nav-link" href="../blog.html">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="../contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -64,84 +66,56 @@
     </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/devlog-bg.jpg')">
+  <header class="masthead" style="background-image: url('../img/RoboticVision.png'); height:560px">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Tutorials</h1>
-            <span class="subheading">This is my Devlogs.</span>
+        <div class="col-md-10 mx-auto">
+          <div class="post-heading" style="top:0">
+            <h2 class="display-4" style="font-size:35px"> 3D object pose recognition framework for robot task based on RGB image</h2>
+            <br>
+            <p class="font-italic">in the 14th Korea Robotics Society Annual Conference (KRoC 2019)</p>
+            <br>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
-            </h2>
-            <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-            </h2>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 18, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Science has not yet mastered prophecy
-            </h2>
-            <h3 class="post-subtitle">
-              We predict too much for the next year and yet far too little for the next ten.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Failure is not an option
-            </h2>
-            <h3 class="post-subtitle">
-              Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on July 8, 2019</p>
-        </div>
-        <hr>
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading">Introduction </h2>
+          <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o4gab-kQA8c" allowfullscreen></iframe>
+          </div>
+          <p> June is an amatuer guitarist.
+            Whenever he collaborates with other performers (e.g., drummers, pianists, and vocalists), he felt a bit of frustration because all the people in the room had to wait for him to tune the guitar.
+            Thus, my team decided to develop a device that can automatically tune the guitar, which we named "TuneTunee".
+            When the user plucks the guitar string, TuneTunee recognizes the frequency of the string and rotates the peg for tuning. </p>
+          <h2 class="section-heading">Methodology</h2>
+          <h4 class="subheading">A. RGB-based Object Recognition</h4>
+          <img class="img-fluid" src="img/ObjectRecog.png" alt="">
+          <h4 class="subheading">B. Automatic Data Acquisition System</h4>
+          <h2 class="section-heading">Results</h2>
+
+          <img class="img-fluid" src="img/PcpTask.png" alt="">
+
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+
+          <h2 class="section-heading">Conclusion</h2>
+          <p>TuneTunee tunes the guitar with the accuracy of &#177; 1Hz for E, A, G and &#177; 2.5Hz for D, A, E string. The time it takes to tune a pitch is 11.5 seconds in average.
+          Throughout the project, our team members learned various signal processing techonologies like FFT, YIN, and auto-correlation. In addition, we explored many electrical components including OP Amp, ADC, and microphones, comparing the specification of each component from multiple companies.
+          Also, we gained the experience of designing CAD models and using 3D printers.
+        </p>
+
+
         </div>
       </div>
     </div>
-  </div>
+  </article>
 
   <hr>
 
@@ -189,13 +163,13 @@
       </div>
     </div>
   </footer>
+
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
-
+  <script src="../js/clean-blog.min.js"></script>
 </body>
 
 </html>
