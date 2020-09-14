@@ -91,26 +91,45 @@
           <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o4gab-kQA8c" allowfullscreen></iframe>
           </div>
-          <p> June is an amatuer guitarist.
-            Whenever he collaborates with other performers (e.g., drummers, pianists, and vocalists), he felt a bit of frustration because all the people in the room had to wait for him to tune the guitar.
-            Thus, my team decided to develop a device that can automatically tune the guitar, which we named "TuneTunee".
-            When the user plucks the guitar string, TuneTunee recognizes the frequency of the string and rotates the peg for tuning. </p>
+          <p> To bring collaborative robots into our everyday lives, the development of low-cost vision system is essential.
+            In this work, we propose a vision framework that recognizes 6D pose of objects, <span class="font-italic">i.e., position and orientation, </span>
+          from RGB images. The system is consisted of three main components: ROI Extraction, Keypoint Regression, and 6D Pose Estimation. </p>
           <h2 class="section-heading">Methodology</h2>
           <h4 class="subheading">A. RGB-based Object Recognition</h4>
+          <p> As shown in the figure below, we identified the locations of objects, regressed some keypoints, and applied PnP algorithm to find out 6D position of objects.
+          To extract the region of interests, we used Mask R-CNN [1] to segment objects from RGB images. From the segmentation results, we estimated 6D pose of the target based on keypoints [2].
+          Here, the target can be selected by the user using the graphical user interface (GUI) of the system.
+          First, we masked the target object to regress eight keypoints using Stacked Hourglass Network (SHN) [3]. Then, we computed 6D pose of the target by applying PnP algorithm to those keypoints.
+          With the estimated 6D pose of the target object, we overlay its 3D model for qualitative evaluation of the algorithm.
+          </p>
           <img class="img-fluid" src="img/ObjectRecog.png" alt="">
+          <span class="caption text-muted">An overview of 3D object pose recognition framework based on RGB image.</span>
           <h4 class="subheading">B. Automatic Data Acquisition System</h4>
+          <p>For training of Mask R-CNN metioned in Section A, we developed our own data acquisition system to automatically collect large amount of data.
+          We used a 6-DOF manipulator, <span class="font-italic">i.e., IndyRP from Neuromeka, </span> and attached a stereo camera on the end-effector for the data acquisition system.
+          We predefined some positions to be uniformly distributed over the hemi-sphere around the object, and changed the light settings for the robust vision algorithm.
+          With the known position of the object and the camera, we labeled the data using 3D model data and the pinhole camera model. As a result, we collected 22,176 images to train Mask R-CNN.
+          </p>
           <h2 class="section-heading">Results</h2>
+          <div class="text-center">
+            <img class="img-fluid" src="img/result-table.PNG" alt="">
+          </div>
+          <p class="caption text-muted">The accuracy of 6D pose estimation</p>
+          <p> The accuracy of our vision system is shown in the table above. Within the error margin of 5cm 5 degrees, we achieved over 60% accuracy in three objects.
+            For pick-and-place tasks, we applied the error margin of 3cm 10 degrees and the system has shown over 90% accuarcy in three objects.
+            Within this margin, the robot is capable of picking up the object and placing it on the marker successfully, as shown in the figure below.
+            The reason why hand cream has shown considerably low accuracy is that it is symmetric, and we would need to find the solution to deal with objects that are symmetric or have little features.
+          </p>
+          <div class="text-center">
+            <img class="img-fluid" src="img/PcpTask.png" alt="">
+          </div>
+          <span class="caption text-muted">IndyRP performing the pick-and-place tasks. It detects 6D pose of the target, picks it up using the end-effector, and places it on the marker.</span>
 
-          <img class="img-fluid" src="img/PcpTask.png" alt="">
 
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-          <h2 class="section-heading">Conclusion</h2>
-          <p>TuneTunee tunes the guitar with the accuracy of &#177; 1Hz for E, A, G and &#177; 2.5Hz for D, A, E string. The time it takes to tune a pitch is 11.5 seconds in average.
-          Throughout the project, our team members learned various signal processing techonologies like FFT, YIN, and auto-correlation. In addition, we explored many electrical components including OP Amp, ADC, and microphones, comparing the specification of each component from multiple companies.
-          Also, we gained the experience of designing CAD models and using 3D printers.
-        </p>
-
+        <h2 class="section-heading">References</h2>
+        <p>[1]  HE, Kaiming, et al. Mask r-cnn. In: Computer Vision (ICCV), 2017 IEEE International Conference on. IEEE, 2017. p. 2980-2988. </p>
+        <p>[2]  PAVLAKOS, Georgios, et al. 6-dof object pose from semantic keypoints. In: Robotics and Automation (ICRA), 2017 IEEE International Conference on. IEEE, 2017. p. 2011-2018. </p>
+        <p>[3]  NEWELL, Alejandro; YANG, Kaiyu; DENG, Jia. Stacked hourglass networks for human pose estimation. In: European Conference on Computer Vision. Springer, Cham, 2016. p. 483-499. </p>
 
         </div>
       </div>

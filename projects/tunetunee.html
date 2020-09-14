@@ -94,15 +94,24 @@
             Thus, my team decided to develop a device that can automatically tune the guitar, which we named "TuneTunee".
             When the user plucks the guitar string, TuneTunee recognizes the frequency of the string and rotates the peg for tuning. </p>
           <h2 class="section-heading">Methodology</h2>
-          <h4 class="subheading">A. Middleware Design</h4>
-          <img class="img-fluid" src="img/TuneTunee-circuit.png" alt="">
+          <h4 class="subheading">A. Hardware</h4>
+           <img class="img-fluid" src="img/TuneTunee-circuit.PNG" alt="">
+           <span class="caption text-muted">A circuit diagram of TuneTunee</span>
+          <p>We designed the circuit for TuneTunee as shown in the figure above. The most important component of our system is undoubtably the microphone. We tested various microphones and chose one that has shown the best performance for our application.
+          Additionally, we used piezo vibration sensor and activated the device only when the piezo sensor detected vibration.
+          In this way, we could prevent our device from working because of external noises.
+          For a main processor, we used Arduino Nano so that we can make the tuner in a compact size.
+          We also used LEDs to indicate whether the string has been tuned or not.
+          Finally, we designed the box using Solidworks and 3D printed the model. The final output of our hardware is presented in the figure below.
+          </p>
+
+          <img class="img-fluid" src="img/TuneTunee-hardware.PNG" alt="">
+
+          <span class="caption text-muted">The hardware of TuneTunee.</span>
           <h4 class="subheading">B. Software</h4>
-          <h4 class="subheading">C. Hardware Design</h4>
-
-          <img class="img-fluid" src="img/TuneTunee-hardware.png" alt="">
-
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
+          For detecting the frequency of guitar strings, we used a Fast Fourier Transform (FFT) algorithm to convert the sound signal from time domain to frequency domain.
+          We used Arduino Library to apply the algorithm, where they had three main functions: Windowing(), Compute(), and ComplextoMagnitude().
+          In order to control the servo motor that rotates the peg to tune the guitar, we used a closed-loop control algorithm that computes the difference between the desired and current frequencies to command the motor accordingly.
           <h2 class="section-heading">Conclusion</h2>
           <p>TuneTunee tunes the guitar with the accuracy of &#177; 1Hz for E, A, G and &#177; 2.5Hz for D, A, E string. The time it takes to tune a pitch is 11.5 seconds in average.
           Throughout the project, our team members learned various signal processing techonologies like FFT, YIN, and auto-correlation. In addition, we explored many electrical components including OP Amp, ADC, and microphones, comparing the specification of each component from multiple companies.
