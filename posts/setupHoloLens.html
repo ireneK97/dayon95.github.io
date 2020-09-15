@@ -91,42 +91,92 @@
             <ul>
                 <li>Enable developer mode & Device Portal: Go to Settings > Update & Security > For developers </li>
             </ul>
-            <li>Visual Studio 2017 (<a href="https://visualstudio.microsoft.com/vs/older-downloads/)">Download Link</a>)</li>
+            <li>Visual Studio 2017 (<a href="https://visualstudio.microsoft.com/vs/older-downloads/">Download Link</a>)</li>
             <ul>
                 <li>Installing Options: .NET desktop development, Desktop development with C++, Universal Windows Platform development</li>
                 <li>Install the recent Windows 10 SDK (10.0.18362.0) (<a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)">Download Link</a>)</li>
             </ul>
+            <li>Unity (<a href="https://unity3d.com/get-unity/download">Download Link</a>)</li>
+            <ul>
+                <li>Install Unity Hub, then open the hub to install 2018.X.X LTS version by clicking the ADD button </li>
+            <img class="img-fluid" src="img/install-unity.png" alt="">
+            </ul>
           </ul>
-
-        <h2 class="section-heading">Step 4: Push to Your Repository</h2>
-        Open the git bash to write the following git commands to push the template to your repository.
-        <div class="p-3 mb-2 bg-light text-dark text-left">
-          <pre><code>cd &lt;your-local-directory&gt;<br>git init<br>git remote add origin https://github.com/dayon95/dayon95.github.io.git<br>git add --all<br>git status<br>git commit -m "add default template files"<br>git push -u origin master</code></pre>
-        </div>
-
-        <h2 class="section-heading">Step 5: Check Your First Website</h2>
-        <img class="img-fluid" src="img/check-website.png" alt="">
-        <p>In your repository at Github, you would see that the contents have been added properly.
-        <br>Next, go to "Settings" tab, and you would find the link to your website under "Github Pages".
-        Check if the "Source" of the GitHub ages is set to the correct branch. Then follow the link to check your first website!
-        <br>It might take four to eight minutes to reflect the changes in the link, so please be patient about publishing the website.
+        <p>When your computer satisfies all the requirements mentioned above, you are ready to make your first AR application!</p>
+        <h2 class="section-heading">Step 1: Create New Unity Project</h2>
+        <p>Open Unity 2018 and create new unity project by clicking "New" button.
+        <img class="img-fluid" src="img/new-unityProj.png" alt="">
+        Select "3D" as the Template for new project, and assign the project name and location to whatever you want.
+        It might take some time to create new project. There will be a default scene named "SampleScene"; you may save the scene with the different name by clicking
+        <span class="font-weight-bold">File>Save Scene As.</span>
         </p>
-        <h2 class="section-heading">Step 6: Make some changes to the default template</h2>
-        <img class="img-fluid" src="img/edit-html.png" alt="">
-        <p>Now you can customize the template by editing html, css, and js codes (or others if needed).
-        Open your favorite code editor. I use Atom, and as shown in the picture above, I changed some contents in 'index.html', which is the main page of your website.
-        When editing the codes, you can click html files in the local directory to see if your code is working right before you actually publish the changes to the website.
-        When you confirmed the changes and want to change your actual website, then you just push the codes to the repository by writing the following git commands like we've done before. </p>
-        <div class="p-3 mb-2 bg-light text-dark text-left">
-          <pre><code>git add --all<br>git status<br>git commit -m "update index.html"<br>git push -u origin master</code></pre>
-        </div>
 
-        <h2 class="section-heading">References for Design Ideas</h2>
-        <p>This is a list of links to the website of mine, Chien-Ming Huang's, and Safinah Ali's that you can refer to when making your website.</p>
+        <h2 class="section-heading">Step 2: Setup the main camera</h2>
+        <img class="img-fluid" src="img/camera-setting.png" alt="">
+        <p>Click "Main Camera" in the scene hierarchy. In the Inspector tab, do the following.
         <ul>
-          <li><a href="https://dayon95.github.io/">My Website</a></li>
-          <li><a href="https://www.cs.jhu.edu/~cmhuang/">Prof. Chien-Ming Huang's Website</a></li>
-          <li><a href="https://safinahali.github.io/">Safinah Ali's Website  </a></li>
+          <li>Under Transform, set its position to <span class="font-weight-bold">0, 0, 0</span>.</li>
+          <li>Under Camera, set "Clear Flags" to "Solid Color" using the dropdown menu, then set the RGB value for background color to <span class="font-weight-bold">0, 0, 0</span> (black)</li>
+        </ul>
+        </p>
+        <h2 class="section-heading">Step 3: Edit Unity Project Settings</h2>
+        <h4 class="subheading">1. Quality Setting</h4>
+        <img class="img-fluid" src="img/quality-setting.png" alt="">
+        <p>Go to <span class="font-weight-bold">Edit>Project Settings>Quality</span>: Under Windows icon, set its level to "Very Low" by clicking the inverted triangle in the "Default" row.  </p>
+
+        <h4 class="subheading">2. Player Setting</h4>
+        <img class="img-fluid" src="img/player-setting.png" alt="">
+        <p>Go to <span class="font-weight-bold">Edit>Project Settings>Player</span>: Click Windows icon to do the following works  </p>
+        <ul>
+          <li>Under <span class="font-weight-bold">XR Settings</span>, check "Virtual Reality Supported". Make sure "Windows Mixed Reality" is selected as Virtual Reality SDKs.</li>
+          <li>Under <span class="font-weight-bold">Publishing Settings</span>, there's "Capabilities" property and check any function you would like to use for your project.
+             For example, if you are going to use spatial mapping, check "Spatial Perception".</li>
+          <li>Under <span class="font-weight-bold">Other Settings</span>, there's "Configuration" property. Set ".NET" as Scripting Backend (optional). </li>
+        </ul>
+
+        <h2 class="section-heading">Step 4: Create Simple 3D Object to Render</h2>
+        <img class="img-fluid" src="img/3d-cube.png" alt="">
+        <p>In this tutorial, I just created a cube by right clicking the hierarchy panel and click <span class="font-weight-bold">3D Object>Cube</span>.
+        You may choose other models to play with. Then, change its position and scale to make sure that the main camera can see the object.
+        It is particularly important to set the depth value to the larger value than 0.85 (recommended value).
+        </p>
+        <h2 class="section-heading">Step 5: Build the Project</h2>
+        <p>Now save the scene to publish your first AR application to HoloLens. </p>
+        <img class="img-fluid" src="img/buildProj.png" alt="">
+        <p>First, click the button "Add Open Scenes" to add the scene we've made.
+          Next, choose "Universal Windows Platform" as the Platform. If you've chosen ".NET" as your scripting backend, you need to check the box for "Unity C# Projects".
+          Then, click "Switch Platform". You might need to wait for a while, and when "Build" button is activated, click the button to see the pop-up like the picture below.</p>
+        <img class="img-fluid" src="img/buildProj2.png" alt="">
+        <p>Create the folder where you would save the built results. Here, I named the folder as "App" and selected the folder for the build.</p>
+        <h2 class="section-heading">Step 6: Deploy the Project to HoloLens</h2>
+        <img class="img-fluid" src="img/deployProj.png" alt="">
+        <p>Connect your HoloLens to PC using the USB, and power on the device.</p>
+        <p>When the build is completed, VS solution file will be generated. Open the solution file to set the solution configuration to "Release", the solution platform to "x86", and the device to "Device" as you can see in the red box of the above picture.</p>
+        <p>Finally, click <span class="font-weight-bold">Build > Start Debugging</span>. It will deploy the application to HoloLens. Wear your HoloLens to check your first AR application! </p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/417864285" allowfullscreen></iframe>
+        </div>
+        <h2 class="section-heading">Additional Tip: How to use Device Portal</h2>
+        <img class="img-fluid" src="img/device-portal.png" alt="">
+        <p>When you want to film the demonstration video for your own AR application, Windows Device Portal is a great tool for this. It has functions like live preview, recording, and taking a photo.</p>
+        <p>To use the Device Portal, you can use either USB or Wi-Fi to connect the HoloLens to the PC.
+        <ul>
+          <li>Using USB: Enter <u>https://127.0.0.1:10080</u> into your internet browser</li>
+          <li>Using Wi-Fi: Enter <u>https://&lt;ip-address-of-your-hololens&gt;</u> into your internet browser</li>
+          <ul>
+            <li> You can find out the IP address of your device by going to <span class="font-weight-bold">Settings > Network & Internet > Wi-Fi > Hardware Properties</span></li>
+          </ul>
+        </ul>
+        <p>If it's your first time to use the device portal, you need to set a username and password.
+        In your HoloLens, go to <span class="font-weight-bold">Settings>Update & Security>For developers</span>.
+        Then, turn on 'Use Developer Features' and 'Enable Device Portal'. When you click the "Pair" button, a PIN would pop up.
+        Enter the PIN in the browser mentioned above to create a username and password. You would need to enter the username and password whenever you are trying to connect the HoloLens to new PC, so please write down the account information in order not to forget it.
+        </p>
+        <h2 class="section-heading">References</h2>
+        <ul>
+          <li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-100">MR Basics 100: Getting started with Unity</a></li>
+          <li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101">MR Basics 101: Complete project with device</a></li>
+          <li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-device-portal"> Using the Windows Device Portal</a></li>
         </ul>
         </div>
       </div>
